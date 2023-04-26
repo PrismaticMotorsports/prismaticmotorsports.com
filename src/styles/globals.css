@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgba: 0, 0, 0, 0;
+  --background-start-rgba: 214, 219, 220, 0.5;
+  --background-end-rgba: 255, 255, 122, 0.5;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+.bg-cd-spec-grad {
+  background:  linear-gradient(
+    90deg,
+    theme(colors.cdSpec.burple) 16%,
+    theme(colors.cdSpec.pink) 33%,
+    theme(colors.cdSpec.purple) 50%,
+    theme(colors.cdSpec.blue) 66%,
+    theme(colors.cdSpec.green) 83%,
+    theme(colors.cdSpec.yellow) 100%
+  );
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
