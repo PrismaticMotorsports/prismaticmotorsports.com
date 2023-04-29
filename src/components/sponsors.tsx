@@ -1,7 +1,7 @@
 import sponsors from '@/data/sponsors'
 import Image from 'next/image'
 
-export default () => {
+const Sponsors = () => {
     return <div className="max-w-screen-2xl">
     <div className="flex flex-col items-center font-pp">
       <h1 className='text-4xl'>Our Partners</h1>
@@ -22,3 +22,5 @@ export default () => {
     </div>
   </div>
 }
+
+export default Sponsors;
