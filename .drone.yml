@@ -25,6 +25,7 @@ steps:
       command_timeout: 2m
       script:
         - cd /var/deploy/prismaticmotorsports.com/
+        - docker compose -f compose.dev.yml pull
         - docker compose -f compose.dev.yml up --force-recreate -d
 ---
 kind: pipeline
@@ -54,4 +55,5 @@ steps:
       command_timeout: 2m
       script:
         - cd /var/deploy/prismaticmotorsports.com/
-        - docker compose -f compose.dev.yml up --force-recreate -d
+        - docker compose -f compose.prod.yml pull
+        - docker compose -f compose.prod.yml up --force-recreate -d
