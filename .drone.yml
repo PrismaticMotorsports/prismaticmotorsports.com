@@ -11,6 +11,7 @@ steps:
       username: roxxers
       password:
         from_secret: docker_pass
+      repo: roxxers/${DRONE_REPO}
       tags: development
   - name: deploy site
     image: appleboy/drone-ssh
@@ -39,6 +40,7 @@ steps:
       username: roxxers
       password:
         from_secret: docker_pass
+      repo: roxxers/${DRONE_REPO}
       tags: latest
   - name: deploy site
     image: appleboy/drone-ssh
