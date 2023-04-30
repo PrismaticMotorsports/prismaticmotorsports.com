@@ -17,7 +17,7 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - 172.0.17.1
+        - 172.17.0.1
       username: drone
       key:
         from_secret: one_ssh_key
@@ -46,7 +46,7 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - 172.0.17.1
+        - 172.17.0.1
       username: drone
       key:
         from_secret: one_ssh_key
