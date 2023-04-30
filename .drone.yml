@@ -17,11 +17,11 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - 172.17.0.1
+        - a.one.prismaticmotorsports.com
       username: drone
       key:
         from_secret: one_ssh_key
-      port: 2222
+      port: 8398
       command_timeout: 2m
       script:
         - cd /var/deploy/prismaticmotorsports.com/
@@ -46,11 +46,11 @@ steps:
     image: appleboy/drone-ssh
     settings:
       host:
-        - 172.17.0.1
+        - a.one.prismaticmotorsports.com
       username: drone
       key:
         from_secret: one_ssh_key
-      port: 2222
+      port: 8398
       command_timeout: 2m
       script:
         - cd /var/deploy/prismaticmotorsports.com/
