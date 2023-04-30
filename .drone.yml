@@ -1,0 +1,55 @@
+kind: pipeline
+type: docker
+name: deploy dev (main branch)
+trigger:
+  branch:
+    - main
+steps:
+  - name: build docker image
+    image: plugins/docker
+    settings:
+      username: roxxers
+      password:
+        from_secret: docker_pass
+      tags: development
+  - name: deploy site
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        - 172.0.17.1
+      username: drone
+      key:
+        from_secret: one-ssh-key
+      port: 22
+      command_timeout: 2m
+      script:
+        - cd /var/deploy/${DRONE_REPO_NAME}/
+        - docker compose up --force-recreate -d -f compose.dev.yml
+---
+kind: pipeline
+type: docker
+name: deploy dev (prod branch)
+trigger:
+  branch:
+    - production
+steps:
+  - name: build docker image
+    image: plugins/docker
+    settings:
+      username: roxxers
+      password:
+        from_secret: docker_pass
+      tags: latest
+  - name: deploy site
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        - 172.0.17.1
+      username: drone
+      key:
+        from_secret: one-ssh-key
+      port: 22
+      command_timeout: 2m
+      script:
+        - cd /var/deploy/${DRONE_REPO_NAME}/
+        - docker compose up --force-recreate -d -f compose.prod.yml
