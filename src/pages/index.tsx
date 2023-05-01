@@ -4,7 +4,7 @@ import Sponsors from "@/components/sponsors";
 
 export default function Home() {
   return (
-    <div className="bg-peach text-white min-h-screen flex flex-col ">
+    <div className="bg-peach text-white min-h-screen flex flex-col w-screen">
       <div className="flex flex-col items-center text-center sm:space-y-24 mb-8">
         <div className="text-white p-24">
           <h1 className="font-pp sm:pt-32 md:pt-64 md:text-7xl sm:text-6xl text-4xl">
