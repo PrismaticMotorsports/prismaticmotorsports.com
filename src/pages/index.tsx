@@ -1,6 +1,7 @@
 import Footer from "@/components/footer";
 import Sponsors from "@/components/sponsors";
-
+import socials from "@/data/social";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Home() {
   return (
@@ -13,6 +14,13 @@ export default function Home() {
           <h2 className="md:text-3xl sm:text-xl">
             Coming Soon
           </h2>
+          <div className="flex justify-center gap-4 mt-6 text-4xl">
+            {socials.map((social, i) => {
+                return <a key={i} href={social.link}>
+                  <FontAwesomeIcon icon={social.fa_icon} className="hover:text-gray-100"/>
+                </a>
+              })}
+          </div>
         </div>
         <div className="">
           <Sponsors/>
