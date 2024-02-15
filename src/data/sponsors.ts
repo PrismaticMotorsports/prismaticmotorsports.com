@@ -6,11 +6,11 @@ const sponsors: Sponsor[] = [
         short_name: "gftg",
         link: "https://goforthegap.co.uk/"
     },
-    {
-        name: "Certifiably Diverse",
-        short_name: "cd",
-        link: "https://certifiablydiverse.com/"
-    },
+    // {
+    //     name: "Certifiably Diverse",
+    //     short_name: "cd",
+    //     link: "https://certifiablydiverse.com/"
+    // },
     {
         name: "Kadan Computers",
         short_name: "kadan",
